@@ -2,7 +2,33 @@
 <html>
   <head>
     <title>Global Temperatures</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel='stylesheet' type='text/css' href='../common/nv.d3.css' />
+    <script type='text/javascript' src='../common/d3.js'></script>
+    <script type='text/javascript' src='../common/nv.d3.js'></script>
+    <script type='text/javascript' src='./temp-data.js'></script>
+    <script type='text/javascript' src='./index.js'></script>
   </head>
-  <body>
+  <body style='text-align:center;'>
     <h1>Global Temperatures</h1>
+    <hr />
+    <svg id='graph' style='height:512px;' />
+    <hr />
+    <button id='toggleGlobal'>Toggle Global Data</button>
+    <button id='toggleHemi'>Toggle Hemisphere Data</button>
+    <button id='toggleZone'>Toggle Lattitude Zone Data</button>
+    <hr />
+    <p>This graph shows global, hemisphere &amp; lattitude-specific temperatures
+    from 1880 to 2014. The Y-axis shows the temperature in degrees celsius
+    while the X-axis shows the current year.</p>
+    <p>The global trend seems to be only slightly increasing from 1880-1940,
+    followed by a peak during 1944 and then a more rapid increase from 1955 and
+    on.</p>
+    <p>The northern hemisphere rises above the southern hemisphere by
+    approximately 20 degrees Celsius after 1998.</p>
+    <p>Enabling the Lattitude Zone lines &amp; disabling the other lines allows
+    us to see that the 24N-90N section of the Northern Hemisphere is a much
+    warmer than the rest of the earth after 1998, with temperatures 40-60
+    degrees higher than 90S-24S and 20-40 degrees higher than 24S-24N.</p>
+  </body>
 </html>

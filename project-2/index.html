@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reddit Reposts</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script type='text/javascript' src='../common/d3.js'></script>
+    <script type='text/javascript' src='./reddit-data.js'></script>
+    <script type='text/javascript' src='./index.js'></script>
+    <style>
+#nodes g text {
+  fill: white;
+  font-size: 0.8em;
+}
+#nodes {
+  cursor:pointer;
+}
+svg {
+  background-color: black;
+}
+    </style>
+  </head>
+  <body style='text-align:center;'>
+    <h1>Reddit Repost Acceptance</h1>
+    <hr />
+    <div id='network'></div>
+    <hr />
+    <input id='minimumSize' type='number' min='2' step='2' value='4' />
+    <label for='minimumSize'>Minimum Node Size</label>
+    <br />
+    <input id='maximumSize' type='number' min='2' step='2' value='18' />
+    <label for='maximumSize'>Maximum Node Size</label>
+    <br />
+    <input id='minimumVotes' type='number' min='0' step='1' value='2750' />
+    <label for='minimumVotes'>Minimum Upvotes Required</label>
+    <br />
+    <input id='minimumDown' type='number' min='0' step='1' value='5' />
+    <label for='minimumDown'>Minimum Downvotes Required</label>
+    <br />
+    <input id='minimumDistance' type='number' min='0' step='5' value='150' />
+    <label for='minimumVotes'>Minimum Distance Between Nodes</label>
+    <br />
+    <input id='maximumDistance' type='number' min='0' step='5' value='500' />
+    <label for='maximumDistance'>Maximum Distance Between Nodes</label>
+    <hr />
+    <p>This force-directed graph shows the acceptance of reposts from one
+    subreddit to another. Upvotes on reposts causes links between nodes to turn
+    green, while an overall number of downvotes causes the link color to turn
+    red. Larger nodes have more original submissions than smaller nodes.
+    Nodes receptive to reposts are colored green while those that downvote
+    reposts are colored red. So in order to maximum the karma you get from
+    reposts, you'll want to search the larger subreddits for content, while
+    reposting to subreddits that are both bright green and connected to the
+    original subreddit.</p>
+    <p>If a node is green but has a red link color, the node is receptive to
+    reposts, but original submissions from that subreddit don't repost well to
+    other subreddits.</p>
+    <p>The graph shows that the funny &amp; pics are the largest creators of
+    original content, which many subreddits feed off of without creating
+    content that is reposted anywhere. There are many subreddits highly
+    receptive of reposts originating from these two subreddits, such as
+    spaceporn, chemicalreactiongifs, LifeProTips, HistoryPorn and technology.
+    There are also subreddits to avoid if you're reposting something from funny
+    or pics, such as ShittyPhotoshop, mspaintbattles, gaymers,
+    NobodyCaresApostolate and ForeverAlone.</p>
+    <p>The graph shows that funny and pics are the only link to many
+    subreddits. These gravitate towards the outside of the graph. Subreddits
+    which get reposts from both funny AND pics end up between the two nodes,
+    like 4chan, arresteddevelopment, WTF, GIFS, Music and StarWars. If you
+    zoom-in(by pressing Control and +) you can see a more connected network of
+    subreddits that feed off of each other and pics/funny, such as
+    reactiongifs, atheism, gaming, woahdude, AdviceAnimals and movies. You may
+    want to increase the minimum node size to 10 and the minimum upvotes to
+    10000 in order to see this better.</p>
+    <p>The data was obtained from 
+    <a target='_blank' href='http://snap.stanford.edu/data/web-Reddit.html'>Stanford's SNAP</a>.
+    A subset of the data can be selected manually by modifying the minimum
+    upvotes and downvotes required for a link to be included.
+    </p>
+  </body>
+</html>
